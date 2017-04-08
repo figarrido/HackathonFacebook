@@ -13,8 +13,10 @@
 ActiveRecord::Schema.define(version: 20170408191852) do
 
   create_table "games", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",        null: false
     t.string   "description"
+    t.integer  "platform",    null: false
+    t.integer  "category",    null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
