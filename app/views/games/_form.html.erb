@@ -21,6 +21,16 @@
     <%= f.text_field :description %>
   </div>
 
+  <div class="field">
+    <%= f.label :platform %>
+    <%= select :game, :platform, Game.platforms %>
+  </div>
+
+  <div class="field">
+      <%= f.label :category %>
+      <%= select :game, :platform, Game.categories %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
