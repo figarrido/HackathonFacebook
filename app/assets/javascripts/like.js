@@ -2,7 +2,6 @@ $(function(){
     $('.button.button1').click(function (e) {
 
         //$.post('new_like', {game_id: this.id})
-         console.log("se esta imprimiendo");
         // identifier = this.id
         //
         $.ajax({
