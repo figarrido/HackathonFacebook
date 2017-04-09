@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users
   root 'login#loginask'
   post 'new_like', to: 'games#new_like'
-  post 'match', to: 'games#match'
+  get 'match', to: 'games#match'
 
   # Login
    get 'login', to: "login#loginask"

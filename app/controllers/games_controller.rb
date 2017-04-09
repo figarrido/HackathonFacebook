@@ -22,31 +22,24 @@ class GamesController < ApplicationController
   end
 
   def new_like
-      puts "este es un puts"
-      puts params.inspect
       game_id = params[:game_id].to_i
-      puts game_id
       game = Game.find(game_id)
       likes = Like.where(liker: game.user_id, liked: session[:user_id])
-      likeds = Like.find_by_liked(game.user_id)
-      p likeds
-      likers = Like.find_by_liker(session[:user_id])
-      p session[:user_id]
-      p likes
+
       if likes.nil? || likes.blank?
           n = Like.new({liker: session[:user_id], liked: game.user_id, game: game.id})
           n.save
       else
-          redirect_to 'match'
+          redirect_to action: 'match', controller: 'games', params: {new_game: likes[0].game, old_game: game.id, exchanger: game.user_id}
       end
   end
 
   def match
-      @game1 = Game.find(params[:liker])
-      @game2 = Game.find(params[:liked])
-
-      @user1 = User.find(@game1.user_id)
-      @user2 = User.find(@game2.user_id)
+      @me = User.find(session[:user_id]).name
+      @other = User.find(params[:exchanger]).name
+      @mail = User.find(params[:exchanger]).mail
+      @new_game = Game.find(params[:new_game]).name
+      @old_game = Game.find(params[:old_game]).name
   end
 
   # GET /games/1/edit
