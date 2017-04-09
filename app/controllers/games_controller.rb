@@ -21,6 +21,20 @@ class GamesController < ApplicationController
     end
   end
 
+  def new_like
+      game_id = params.game_id
+      game = Game.find(id: game_id)
+      likeds = Like.find_by_liked(game.user_id)
+      likers = Like.find_by_liker(session[:user_id])
+      if !likeds.length && !likers.length
+          n = Like.new({liker: session[:user_id], liked: game.user_id, game: game.id})
+          n.save
+      else
+          redirect_to 'match'
+      end
+
+  end
+
   # GET /games/1/edit
   def edit
   end

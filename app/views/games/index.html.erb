@@ -24,13 +24,14 @@
                 <%= game.name %>
             </figcaption>
             <figcaption>
-              <%= button_tag( :class => "button button1") do %>
+              <!-- <%= button_tag(:class => "button button1", action: 'new_like', id: game.id) do %> -->
+              <%= button_tag new_like_path(game.id) %>
                 <i class='fa fa-thumbs-up'></i>
               <% end %>
               <%= button_tag( :class => "button button2") do %>
                 <i class="fa fa-thumbs-down"></i>
               <% end %>
-                
+
             </figcaption>
         </figure>
 
