@@ -22,8 +22,13 @@
                 <%= game.name %>
             </figcaption>
             <figcaption>
-                <button class="button button1"><i class="fa fa-thumbs-up"></i></button>
-                <button class="button button2"><i class="fa fa-thumbs-down"></i></button>
+              <%= button_tag( :class => "button button1") do %>
+                <i class='fa fa-thumbs-up'></i>
+              <% end %>
+              <%= button_tag( :class => "button button2") do %>
+                <i class="fa fa-thumbs-down"></i>
+              <% end %>
+                
             </figcaption>
         </figure>
 
