@@ -1,37 +1,45 @@
-<%= form_for(game) do |f| %>
-  <% if game.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
 
-      <ul>
-      <% game.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="login-page" >
+  <div class="form">
+  <%= form_for(game) do |f| %>
+    <% if game.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(game.errors.count, "error") %> prohibited this game from being saved:</h2>
+
+        <ul>
+        <% game.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field" style="color: white">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+
+    <div class="field" style="color: white">
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+
+    <div class="field" style="color: white">
+      <%= f.label :platform %>
+      <%= select :game, :platform, Game.platforms %>
+    </div>
+
+    <div class="field" style="color: white">
+        <%= f.label :category %>
+        <%= select :game, :category, Game.categories %>
+    </div>
+
+    <div class="actions" style="color: white">
+      <%= f.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <% if @error.present? %>
+    <div class="error-message"><strong>Atención: </strong><%= @error %></div>
+  <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :platform %>
-    <%= select :game, :platform, Game.platforms %>
-  </div>
-
-  <div class="field">
-      <%= f.label :category %>
-      <%= select :game, :category, Game.categories %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

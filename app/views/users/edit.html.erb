@@ -1,3 +1,13 @@
+<div class="icon-bar">
+  <a class="active" href="#"><img class='logo'></a>
+  <a href="#"><img class='nintendo'></a>
+  <a href="#"><img class='playstation'></a>
+  <!--<a href="#"><img class='windows'></a>-->
+  <a href="#"><img class='xbox'></a>
+    <%= link_to '<i class="fa fa-user" style="font-size:30px;"></i>'.html_safe, user_path(session[:user_id]) %>
+    <%= link_to '<i class="fa fa-sign-out" style="font-size:30px;"></i>'.html_safe, login_logout_path, method: :delete  %>
+</div>
+
 <center><h1>Editing User</h1></center>
 
 <%= render 'form', user: @user %>
