@@ -1,5 +1,16 @@
-<h1><%= @me %> hiciste match con <%= @other %></h1>
+<div class="icon-bar">
+  <a class="active" href="#"><img class='logo'></a>
+  <a href="#"><img class='nintendo'></a>
+  <a href="#"><img class='playstation'></a>
+  <!--<a href="#"><img class='windows'></a>-->
+  <a href="#"><img class='xbox'></a>
+    <%= link_to '<i class="fa fa-user" style="font-size:30px;"></i>'.html_safe, user_path(session[:user_id]) %>
+    <%= link_to '<i class="fa fa-sign-out" style="font-size:30px;"></i>'.html_safe, login_logout_path, method: :delete  %>
+</div>
+<img src="https://launchschool.com/blog/handling-emails-in-rails" style="width=100%;height=auto;"/>
+<center><h1><%= @me %> hiciste match con <%= @other %></h1>
 
 <h2>Tienes que intercambiar tu juego <%= @old_game %> con el juego <%= @new_game %> de tu match.</h2>
 
 <p>El mail de tu match es <%= @mail %></p>
+</center>
