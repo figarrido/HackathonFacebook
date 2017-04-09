@@ -1,5 +1,5 @@
 class LoginController < ApplicationController
-  #skip_before_action :user_session_required, only: [:ask, :validate, :reset_password]
+  #skip_before_action :user_session_required, only: [:validate]
 
   def loginask
     user_id = session[:user_id]

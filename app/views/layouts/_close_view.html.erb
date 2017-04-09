@@ -1,9 +1,8 @@
 
   <nav >
-    <%=if @user != nil
+    <%=if @current_user.nil?
+      link_to "Registrarse", new_user_path
+    else
       link_to "Cerrar sesion", login_logout_path, method: :delete
-        end%>
-    <%=if @user == nil
-          link_to "Registrarse", users_path
         end%>
   </nav>
