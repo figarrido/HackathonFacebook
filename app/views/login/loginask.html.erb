@@ -1,0 +1,19 @@
+<div class="login-page">
+  <center>
+    <img class= "logo" src="https://2.bp.blogspot.com/-FmgxtKB7nPc/WOlZlTaWovI/AAAAAAAAMGo/d2_OKj5xNUsqTPjUxNRgtXz8P-x3WkPDwCLcB/s1600/logo2.jpg" alt="rss feed" />
+  </center>
+  <div class="form">
+    <%= form_tag login_validate_path do %>
+    <div class="login-control">
+      <%= text_field_tag(:mail, nil, placeholder: "email") %>
+      <%= password_field_tag(:password, nil, placeholder: "password") %>
+    </div>
+    <div class="form-control1">
+      <%= submit_tag("Ingresar", :style => "background: #bdd684;") %>
+    </div>
+  <% end %>
+  <% if @error.present? %>
+    <div class="error-message"><strong>Atención: </strong><%= @error %></div>
+  <% end %>
+  </div>
+</div>
