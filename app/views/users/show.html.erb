@@ -5,16 +5,6 @@
   <%= @user.name %>
 </p>
 
-<!-- <p>
-  <strong>Nickname:</strong>
-  <%= @user.nickname %>
-</p>
-
-<p>
-  <strong>Mail:</strong>
-  <%= @user.mail %>
-</p> -->
-
 <h1>Games:</h1>
 <ul>
     <% @user.games.each do |game|%>
@@ -27,4 +17,5 @@
 
 
 <%= link_to 'Edit Profile', edit_user_path(@user) %>
+<%= link_to 'Log out', login_logout_path, method: :delete %>
 <!-- <%= link_to 'Back', users_path %> -->
