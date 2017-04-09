@@ -22,6 +22,10 @@ class User < ApplicationRecord
       Game.where(user_id: self.id).all
   end
 
+  def not_my_games
+    Game.where.not(user_id: self.id).all
+  end
+
   def active_toggle
     self.update(active: !self.active)
   end

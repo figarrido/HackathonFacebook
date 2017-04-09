@@ -14,7 +14,7 @@
 
 <div id="columns">
 
-    <% User.find(session[:user_id]).games.each do |game| %>
+    <% User.find(session[:user_id]).not_my_games.each do |game| %>
 
         <figure>
             <img src=<%=game.description %> >
