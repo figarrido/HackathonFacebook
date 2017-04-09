@@ -17,7 +17,7 @@
     <% User.find(session[:user_id]).games.each do |game| %>
 
         <figure>
-            <img src='https://media.playstation.com/is/image/SCEA/the-last-of-us-remastered-two-column-01-ps4-us-28jul14?$TwoColumn_Image$'>
+            <img src=<%=game.description %> >
             <figcaption>
                 <%= game.name %>
             </figcaption>
