@@ -1,28 +1,35 @@
-<p id="notice"><%= notice %></p>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
-<h1>Games</h1>
+<!-- <p id="notice"><%= notice %></p> -->
+<div class="icon-bar">
+  <a class="active" href="#"><img class='logo'></a>
+  <a href="#"><img class='nintendo'></a>
+  <a href="#"><img class='playstation'></a>
+  <a href="#"><img class='windows'></a>
+  <a href="#"><img class='xbox'></a>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @games.each do |game| %>
-      <tr>
-        <td><%= game.name %></td>
-        <td><%= game.description %></td>
-        <td><%= link_to 'Show', game %></td>
-        <td><%= link_to 'Edit', edit_game_path(game) %></td>
-        <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="columns">
+
+    <% User.find(session[:user_id]).games.each do |game| %>
+
+        <figure>
+            <img src='https://media.playstation.com/is/image/SCEA/the-last-of-us-remastered-two-column-01-ps4-us-28jul14?$TwoColumn_Image$'>
+            <figcaption>
+                <%= game.name %>
+            </figcaption>
+            <figcaption>
+                <button class="button button1"><i class="fa fa-thumbs-up"></i></button>
+                <button class="button button2"><i class="fa fa-thumbs-down"></i></button>
+            </figcaption>
+        </figure>
+
     <% end %>
-  </tbody>
-</table>
+</div>
+
 
 <br>
 

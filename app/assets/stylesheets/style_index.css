@@ -1,0 +1,160 @@
+body {margin:0;
+background-color: #f6ffe0}
+
+.icon-bar {
+    width: 100%;
+    background-color: #95ab63;
+    overflow: auto;
+}
+
+.icon-bar a {
+    float: left;
+    width: 20%;
+    text-align: center;
+    padding: 12px 0;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 36px;
+}
+
+.icon-bar a:hover {
+    background-color: #bdd684;
+}
+
+.active {
+    background-color: #10222b !important;
+}
+
+img.playstation {
+  content: url(https://2.bp.blogspot.com/-xK1qAeWqvdk/WOltmQKdvFI/AAAAAAAAMHI/4ATXzSkM97gfgg4ecN0bz--xMlw0LqBqwCLcB/s1600/ps.png);
+  max-width: 40px;
+}
+
+img.xbox{
+  content: url(https://1.bp.blogspot.com/-VgQbidQFlrE/WOltmoB71_I/AAAAAAAAMHQ/W9lvkYvJ-jk6kUD3tIafL5aNOmZzAD10ACLcB/s1600/xbox.png);
+  max-width : 31px;
+}
+
+img.windows{
+  content: url(https://2.bp.blogspot.com/-jXc_9sgpuIs/WOltmVYOaqI/AAAAAAAAMHM/A_tE_hczRc0lFfdUWQlgV27ceTVy3qyZgCLcB/s1600/windows.png);
+  max-width : 30px;
+}
+
+img.nintendo{
+  content: url(https://3.bp.blogspot.com/-QZN78BP1Ktc/WOltmCvIG9I/AAAAAAAAMHE/Rw0WlhjCN_IkbTVS_KYbm_3_iamLnRJFACLcB/s1600/nintendo.png);
+  max-width : 100px;
+  width: : auto;
+  min-width: 90px;
+}
+
+img.logo{
+  content: url(https://2.bp.blogspot.com/-WD7iKEIZsOw/WOl1xkiftqI/AAAAAAAAMHo/pHnHXeyJ4MkzMZYE3cNs5id950UhT-8DgCLcB/s1600/logo3.jpg);
+  width: 30px;
+}
+
+@font-face{font-family:'Calluna';
+ src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/callunasansregular-webfont.woff') format('woff');
+}
+body {
+	background: url(//subtlepatterns.com/patterns/scribble_light.png);
+  font-family: Calluna, Arial, sans-serif;
+  min-height: 100%;
+}
+#columns {
+	column-width: 250px;
+	column-gap: 10px;
+    width: 90%;
+	max-width: 100%;
+	margin: 50px auto;
+}
+
+div#columns figure {
+	background: #fefefe;
+	border: 2px solid #fcfcfc;
+	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+	margin: 5px 5px 5px;
+	padding: 15px;
+	padding-bottom: 15px;
+	transition: opacity .4s ease-in-out;
+  display: inline-block;
+  column-break-inside: avoid;
+}
+
+div#columns figure img {
+	width: 100%; height: auto;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 15px;
+	margin-bottom: 5px;
+}
+
+div#columns figure figcaption {
+  font-size: .9rem;
+	color: #444;
+  line-height: 1.5;
+  text-align: center;
+}
+
+div#columns small {
+  font-size: 1rem;
+  float: right;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+div#columns small a {
+  color: #666;
+  text-decoration: none;
+  transition: .4s color;
+}
+
+div#columns:hover figure:not(:hover) {
+	opacity: 0.4;
+}
+
+@media screen and (max-width: 750px) {
+  #columns { column-gap: 0px; }
+  #columns figure { width: 100%; }
+}
+
+.button {
+    background-color: #e2f0d6; /* Green */
+    border: none;
+    color: white;
+    padding: 7px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: white;
+    color: black;
+    border-radius: 12px;
+    float: right;
+
+}
+
+.button1:hover {
+    background-color: #95ab63;
+    color: white;
+    border-radius: 12px;
+}
+
+.button2 {
+    background-color: white;
+    color: black;
+    border-radius: 12px;
+    float: left;
+
+}
+
+.button2:hover {
+    background-color: #bc2f27;
+    color: white;
+    border-radius: 12px;
+}
