@@ -32,7 +32,14 @@ class GamesController < ApplicationController
       else
           redirect_to 'match'
       end
+  end
 
+  def match
+      @game1 = Game.find(params[:liker])
+      @game2 = Game.find(params[:liked])
+
+      @user1 = User.find(@game1.user_id)
+      @user2 = User.find(@game2.user_id)
   end
 
   # GET /games/1/edit
