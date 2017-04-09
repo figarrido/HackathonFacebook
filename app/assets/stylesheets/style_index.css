@@ -32,16 +32,17 @@ background-color: #f6ffe0}
     padding: 10px 0;
     transition: all 0.3s ease;
     color: white;
-    font-size: 36px;
+    font-size: 30px;
 }
 
 .icon-bar b:hover {
     background-color: #bdd684;
 }
-.active b {
-    background-color: #10222b !important;
-}
 
+img.user_logo {
+  content: url(http://icons.iconarchive.com/icons/icons8/ios7/256/Users-User-Male-2-icon.png);
+  max-width: 40px;
+}
 
 img.playstation {
   content: url(https://2.bp.blogspot.com/-xK1qAeWqvdk/WOltmQKdvFI/AAAAAAAAMHI/4ATXzSkM97gfgg4ecN0bz--xMlw0LqBqwCLcB/s1600/ps.png);
@@ -66,6 +67,10 @@ img.nintendo{
 img.logo{
   content: url(https://2.bp.blogspot.com/-WD7iKEIZsOw/WOl1xkiftqI/AAAAAAAAMHo/pHnHXeyJ4MkzMZYE3cNs5id950UhT-8DgCLcB/s1600/logo3.jpg);
   width: 30px;
+}
+img.biglogo{
+  content: url(https://2.bp.blogspot.com/-WD7iKEIZsOw/WOl1xkiftqI/AAAAAAAAMHo/pHnHXeyJ4MkzMZYE3cNs5id950UhT-8DgCLcB/s1600/logo2.jpg);
+  width: 300px;
 }
 
 @font-face{font-family:'Calluna';
