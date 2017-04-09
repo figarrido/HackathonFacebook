@@ -6,9 +6,10 @@
 </p>
 
 <p>
-  <strong>Description:</strong>
-  <%= @game.description %>
+  <strong>Image:</strong>
+  <br>
+  <%= image_tag @game.description, style: 'width: 20%; height: 20%' %>
 </p>
 
 <%= link_to 'Edit', edit_game_path(@game) %> |
-<%= link_to 'Back', games_path %>
+<%= link_to 'Back', user_path(@game.user_id) %>

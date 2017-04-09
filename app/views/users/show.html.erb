@@ -5,7 +5,7 @@
   <%= @user.name %>
 </p>
 
-<p>
+<!-- <p>
   <strong>Nickname:</strong>
   <%= @user.nickname %>
 </p>
@@ -13,8 +13,18 @@
 <p>
   <strong>Mail:</strong>
   <%= @user.mail %>
-</p>
+</p> -->
+
+<h1>Games:</h1>
+<ul>
+    <% @user.games.each do |game|%>
+        <li><%= link_to game.name, game_path(game.id) %></li>
+    <% end %>
+</ul>
+<br>
+<%= link_to 'Add Game', new_game_path %>
+<br>
 
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit Profile', edit_user_path(@user) %>
+<!-- <%= link_to 'Back', users_path %> -->

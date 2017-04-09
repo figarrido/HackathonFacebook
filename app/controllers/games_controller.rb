@@ -14,7 +14,11 @@ class GamesController < ApplicationController
 
   # GET /games/new
   def new
-    @game = Game.new
+    if session[:user_id] != nil
+        @game = Game.new
+    else
+        redirect_to root_path
+    end
   end
 
   # GET /games/1/edit
@@ -25,10 +29,11 @@ class GamesController < ApplicationController
   # POST /games.json
   def create
     @game = Game.new(game_params)
+    @game.user_id = session[:user_id]
 
     respond_to do |format|
       if @game.save
-        format.html { redirect_to @game, notice: 'Game was successfully created.' }
+        format.html { redirect_to user_path(session[:user_id]), notice: 'Game was successfully created.' }
         format.json { render :show, status: :created, location: @game }
       else
         format.html { render :new }

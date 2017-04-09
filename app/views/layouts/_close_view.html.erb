@@ -3,4 +3,7 @@
     <%=if @user != nil
       link_to "Cerrar sesion", login_logout_path, method: :delete
         end%>
+    <%=if @user == nil
+          link_to "Registrarse", users_path
+        end%>
   </nav>
