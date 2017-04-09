@@ -22,11 +22,18 @@ class GamesController < ApplicationController
   end
 
   def new_like
-      game_id = params.game_id
-      game = Game.find(id: game_id)
+      puts "este es un puts"
+      puts params.inspect
+      game_id = params[:game_id].to_i
+      puts game_id
+      game = Game.find(game_id)
+      likes = Like.where(liker: game.user_id, liked: session[:user_id])
       likeds = Like.find_by_liked(game.user_id)
+      p likeds
       likers = Like.find_by_liker(session[:user_id])
-      if !likeds.length && !likers.length
+      p session[:user_id]
+      p likes
+      if likes.nil? || likes.blank?
           n = Like.new({liker: session[:user_id], liked: game.user_id, game: game.id})
           n.save
       else

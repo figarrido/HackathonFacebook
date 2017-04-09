@@ -24,10 +24,19 @@
                 <%= game.name %>
             </figcaption>
             <figcaption>
+<<<<<<< HEAD
               <%= button_tag(:class => "button button1", action: 'new_like', id: game.id) do %>
               <!-- <%= button_tag new_like_path(game.id) %> -->
                 <i class='fa fa-thumbs-up'></i>
               <% end %>
+=======
+                <!--<%= button_tag new_like_path(game_id: game.id), { class: "button button1", method: :post} do %>
+                  <i class='fa fa-thumbs-up'></i>
+                <% end %>-->
+              <%= button_tag(:class => "button button1", action: 'new_like', id: game.id) do%>
+                <i class="fa fa-thumbs-up"></i>
+                <%end %>
+>>>>>>> f6af3201574a35eb04419034c0e169976ad05591
               <%= button_tag( :class => "button button2") do %>
                 <i class="fa fa-thumbs-down"></i>
               <% end %>
@@ -40,5 +49,3 @@
 
 
 <br>
-
-<!--<%= link_to 'New Game', new_game_path %>-->
