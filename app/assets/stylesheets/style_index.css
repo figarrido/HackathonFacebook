@@ -68,6 +68,10 @@ img.logo{
   content: url(https://2.bp.blogspot.com/-WD7iKEIZsOw/WOl1xkiftqI/AAAAAAAAMHo/pHnHXeyJ4MkzMZYE3cNs5id950UhT-8DgCLcB/s1600/logo3.jpg);
   width: 30px;
 }
+img.biglogo{
+  content: url(https://2.bp.blogspot.com/-WD7iKEIZsOw/WOl1xkiftqI/AAAAAAAAMHo/pHnHXeyJ4MkzMZYE3cNs5id950UhT-8DgCLcB/s1600/logo2.jpg);
+  width: 300px;
+}
 
 @font-face{font-family:'Calluna';
  src:url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/callunasansregular-webfont.woff') format('woff');
