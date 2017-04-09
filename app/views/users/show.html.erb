@@ -1,20 +1,48 @@
-<!--<header>-->
-  <%= link_to 'Log out', login_logout_path, method: :delete %>
-<!--</header>-->
-
+<div class="icon-bar">
+  <a class="active" href="#"><img class='logo'></a>
+  <a href="#"><img class='nintendo'></a>
+  <a href="#"><img class='playstation'></a>
+  <!--<a href="#"><img class='windows'></a>-->
+  <a href="#"><img class='xbox'></a>
+    <%= link_to '<i class="fa fa-user" style="font-size:30px;"></i>'.html_safe, user_path(session[:user_id]) %>
+    <%= link_to '<i class="fa fa-sign-out" style="font-size:30px;"></i>'.html_safe, login_logout_path, method: :delete  %>
+</div>
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @user.name %>
+  <center>
+  <strong>
+  <%= @user.name %>'s Profile
+  </strong>
+</center>
 </p>
 
-<h1>Games:</h1>
-<ul>
+<center>
+<img src="https://press.my.com/media/redactor/Logo_04.png" style="width:140px;height:auto;">
+</center>
+
+<div id="columns">
+
     <% @user.games.each do |game|%>
-        <li><%= link_to game.name, game_path(game.id) %></li>
+
+        <figure>
+            <img src=<%=game.description %> >
+            <figcaption>
+                <%= game.name %>
+            </figcaption>
+            <figcaption>
+              <%= button_tag( :class => "button button1") do %>
+                <i class='fa fa-thumbs-up'></i>
+              <% end %>
+              <%= button_tag( :class => "button button2") do %>
+                <i class="fa fa-thumbs-down"></i>
+              <% end %>
+
+            </figcaption>
+        </figure>
+
     <% end %>
-</ul>
+</div>
 <br>
 <%= link_to 'Add Game', new_game_path %>
 <br>
